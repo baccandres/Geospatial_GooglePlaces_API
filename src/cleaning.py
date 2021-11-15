@@ -22,7 +22,7 @@ def geocode (x):
     """
     data = requests.get(f"https://geocode.xyz/{x}?json=1").json()
     try:
-        return {"type": "Point", "coordinates": [data["latt"], data["longt"]]}
+        return {"type": "Point", "coordinates": [float(data["latt"]), float(data["longt"])]}
     except:
         return data
 
